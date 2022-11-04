@@ -13,11 +13,14 @@ public class Email {
         this.firstName = firstname;
         this.lastName = lastName;
         System.out.println("Email Created for : " + lastName + ", " + firstname );
+
+        this.department = setDepartment();
+        System.out.format("Department: %s", this.department);
     }
 
     private String setDepartment() {
 
-        System.out.print("Please select your department: Enter\n 1 - Sales\n 2 - Development\n 3- Accounting\n");
+        System.out.print("Department codes:\n 1 - Sales\n 2 - Development\n 3- Accounting\n Please select your department codes: ");
         Scanner in = new Scanner(System.in);
         int choice = in.nextInt();
         switch (choice) {
