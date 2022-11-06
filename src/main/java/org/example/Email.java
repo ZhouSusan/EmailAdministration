@@ -96,15 +96,7 @@ public class Email {
     public String getAlternativeEmail() {
         return alternativeEmail;
     }
-
-    //changed password
-    public void setChangePassword(String password) {
-        this.password = password;
-    }
-
-    public String getPassword() {
-        return password;
-    }
+    
 
     public String DisplayInfo() {
         return "\nName: " + lastName + ", " + firstName +
