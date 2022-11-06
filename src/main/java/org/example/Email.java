@@ -88,8 +88,15 @@ public class Email {
         this.mailBoxCapacity = capacity;
     }
 
+    public int getMailBoxCapacity() {
+        return mailBoxCapacity;
+    }
     public void setAlternativeEmail(String alternativeEmail) {
         this.alternativeEmail = alternativeEmail;
+    }
+
+    public String getAlternativeEmail() {
+        return alternativeEmail;
     }
 
     //changed password
