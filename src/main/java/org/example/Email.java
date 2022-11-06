@@ -92,5 +92,8 @@ public class Email {
         this.alternativeEmail = alternativeEmail;
     }
 
-    
+    //changed password
+    public void changePassword(String password) {
+        this.password = password;
+    }
 }
