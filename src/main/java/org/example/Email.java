@@ -96,7 +96,7 @@ public class Email {
     public String getAlternativeEmail() {
         return alternativeEmail;
     }
-    
+
 
     public String DisplayInfo() {
         return "\nName: " + lastName + ", " + firstName +
