@@ -10,7 +10,7 @@ public class Email {
     private String department;
     private String email;
     private int mailBoxCapacity = 500;
-    private String secondaryEmail;
+    private String alternativeEmail;
     private String companySuffix = "aeycompany.com";
 
     public Email(String firstname, String lastName) {
@@ -85,7 +85,12 @@ public class Email {
 
     //mailbox capacity
     public void setMailboxCapacity(int capacity) {
-        this.mailBoxCapacity = mailBoxCapacity;
-
+        this.mailBoxCapacity = capacity;
     }
+
+    public void setAlternativeEmail(String alternativeEmail) {
+        this.alternativeEmail = alternativeEmail;
+    }
+
+    
 }
