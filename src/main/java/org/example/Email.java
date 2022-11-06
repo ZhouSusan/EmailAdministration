@@ -103,4 +103,14 @@ public class Email {
     public void changePassword(String password) {
         this.password = password;
     }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public String DisplayInfo() {
+        return "\nName: " + lastName + ", " + firstName +
+                "\nCompany's email: " + email +
+                "\nMailBox Capacity: " + mailBoxCapacity + " mb";
+    }
 }
