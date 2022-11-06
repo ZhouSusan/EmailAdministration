@@ -9,3 +9,5 @@
     <li>Methods: changePassword, mailBox Capacity, alternative email</li>
     <li>Display employee's info: name, email, and mailbox capacity</li>
 </ul>
+<br>
+<img src="src/main/resources/example.JPG" alt="example output">
