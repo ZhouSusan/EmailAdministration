@@ -24,8 +24,8 @@ public class Email {
         this.password = generateRandomPassword(defaultPasswordLength);
         System.out.format("\nYour new password is : %s", this.password);
 
-        email = firstname.toLowerCase() + lastName.toLowerCase() + "@" + companySuffix;
-        System.out.format("Your email is : %s", email);
+        email = firstname.toLowerCase() + lastName.toLowerCase() + "@" + department + "." + companySuffix;
+        System.out.format("\nYour email is : %s", email);
     }
 
     private String setDepartment() {
@@ -35,13 +35,13 @@ public class Email {
         int choice = in.nextInt();
         switch (choice) {
             case 1:
-                return "You have selected Sales department.";
+                return "sales";
             case 2:
-               return "You have selected Development Department.";
+               return "development";
             case 3:
-                return "You have selected Accounting department.";
+                return "accounting";
             default:
-                return "You have selected no department.";
+                return "none";
              }
         }
 
