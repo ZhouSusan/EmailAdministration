@@ -11,17 +11,18 @@ public class Email {
     private String email;
     private int mailBoxCapacity = 500;
     private String alternativeEmail;
-    private String companySuffix = "aeycompany.com";
+    private String company;
 
-    public Email(String firstname, String lastName) {
+    public Email(String firstname, String lastName, String company) {
         this.firstName = firstname;
         this.lastName = lastName;
+        this.company = company;
         this.department = setDepartment();
 
         this.password = generateRandomPassword(defaultPasswordLength);
         System.out.format("\nYour new password is : %s", this.password);
 
-        email = firstname.toLowerCase() + lastName.toLowerCase() + "@" + department + "." + companySuffix;
+        email = firstname.toLowerCase() + lastName.toLowerCase() + "@" + department + "." + company + ".com";
     }
 
     private String setDepartment() {
@@ -97,6 +98,13 @@ public class Email {
         return alternativeEmail;
     }
 
+    public void setNewPassword(String password) {
+        this.password = password;
+    }
+
+    public String getNewPassword() {
+        return password;
+    }
 
     public String DisplayInfo() {
         return "\nName: " + lastName + ", " + firstName +
