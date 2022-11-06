@@ -8,8 +8,10 @@ public class Email {
     private String password;
     private int defaultPasswordLength = 10;
     private String department;
+    private String email;
     private int mailBoxCapacity;
     private String secondaryEmail;
+    private String companySuffix = "aeycompany.com";
 
     public Email(String firstname, String lastName) {
         this.firstName = firstname;
@@ -21,6 +23,9 @@ public class Email {
 
         this.password = generateRandomPassword(defaultPasswordLength);
         System.out.format("\nYour new password is : %s", this.password);
+
+        email = firstname.toLowerCase() + lastName.toLowerCase() + "@" + companySuffix;
+        System.out.format("Your email is : %s", email);
     }
 
     private String setDepartment() {
