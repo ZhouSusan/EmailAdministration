@@ -9,7 +9,7 @@ public class Email {
     private int defaultPasswordLength = 10;
     private String department;
     private String email;
-    private int mailBoxCapacity;
+    private int mailBoxCapacity = 500;
     private String secondaryEmail;
     private String companySuffix = "aeycompany.com";
 
@@ -81,5 +81,11 @@ public class Email {
         List<String> result = Arrays.asList(input.split(""));
         Collections.shuffle(result);
         return String.join("", result);
+    }
+
+    //mailbox capacity
+    public void setMailboxCapacity(int capacity) {
+        this.mailBoxCapacity = mailBoxCapacity;
+
     }
 }
