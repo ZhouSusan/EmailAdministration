@@ -1,10 +1,12 @@
 package org.example;
-import java.util.Scanner;
+import java.security.SecureRandom;
+import java.util.*;
 
 public class Email {
     private String firstName;
     private String lastName;
     private String password;
+    private int defaultPasswordLength = 10;
     private String department;
     private int mailBoxCapacity;
     private String secondaryEmail;
@@ -16,6 +18,9 @@ public class Email {
 
         this.department = setDepartment();
         System.out.format("Department: %s", this.department);
+
+        this.password = generateRandomPassword(defaultPasswordLength);
+        System.out.format("\nYour new password is : %s", this.password);
     }
 
     private String setDepartment() {
@@ -32,8 +37,44 @@ public class Email {
                 return "You have selected Accounting department.";
             default:
                 return "You have selected no department.";
+             }
         }
 
+    private static final String lowerCaseChars = "abcdefghijklmnopqrstuvwxyz";
+    private static final String upperCaseChars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    private static final String digits = "0123456789";
+    private static final String specialChars = "!@#$%^*()+-_";
+    private static final SecureRandom random = new SecureRandom();
+
+    public static String generateRandomPassword(int length) {
+
+        // Password will contain at least 1 uppercase, 1 lowercase, 1 digit, 1 special character
+        String password = generateRandomString(upperCaseChars, 1) +
+                generateRandomString(lowerCaseChars, 1) +
+                generateRandomString(digits, 1) +
+                generateRandomString(specialChars, 1) +
+                generateRandomString(lowerCaseChars, length - 4);
+
+        return shuffleString(password);
     }
 
+    private static String generateRandomString(String input, int size) {
+
+        if (size < 1) {
+            throw new IllegalArgumentException("Invalid size.");
+        }
+
+        StringBuilder result = new StringBuilder(size);
+        for (int i = 0; i < size; i++) {
+            int index = random.nextInt(input.length());
+            result.append(input.charAt(index));
+        }
+        return result.toString();
+    }
+
+    private static String shuffleString(String input) {
+        List<String> result = Arrays.asList(input.split(""));
+        Collections.shuffle(result);
+        return String.join("", result);
+    }
 }
